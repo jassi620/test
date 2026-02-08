@@ -18,9 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: dev
-    # steps:
-    # - name: Wait for manual approval
-    #   run: echo "Waiting for manual approval via GitHub Environments..."
+    steps:
+    - name: Wait for manual approval
+      run: echo "Waiting for manual approval via GitHub Environments..."
 
   greetings2:
     runs-on: ubuntu-latest
