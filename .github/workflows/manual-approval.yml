@@ -11,20 +11,23 @@ jobs:
   greetings:
     runs-on: ubuntu-latest
     steps:
-      - name: Greet user
-        run: echo "${{ inputs.greeting }}"
-        
+    - name: Greet user
+      run: echo "${{ inputs.greeting }}"
+
   manual-approval:
     runs-on: ubuntu-latest
     environment:
       name: dev
-      # url: https://github.com/jassi620/test/environments/dev
-  
+    steps:
+    - name: Wait for manual approval
+      run: echo "Waiting for manual approval via GitHub Environments..."
+
   greetings2:
     runs-on: ubuntu-latest
     steps:
-      - name: Greet user
-        run: echo "${{ inputs.greeting }}"
+    - name: Greet user
+      run: echo "${{ inputs.greeting }}"
+
     # steps:
     # - name: Checkout repository
     #   uses: actions/checkout@v4
