@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: dev
-      url: https://github.com/jassi620/test/environments/dev
+      # url: https://github.com/jassi620/test/environments/dev
     steps:
     - name: Manual Approval Step
       uses: ./.github/actions/manual-approval
