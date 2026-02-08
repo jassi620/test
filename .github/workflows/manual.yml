@@ -24,7 +24,6 @@ jobs:
   greet:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    environment: test
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -32,7 +31,17 @@ jobs:
     - name: Send greeting
       run: echo "Hello ${{ inputs.name }}"
    # This workflow contains a single job called "greet"
-  
+   
+  manual-approval:
+    runs-on: ubuntu-latest
+    environment:
+      name: test
+      url: https://github.com/jassi620/test/environments/test
+    steps:
+    - name: Manual Approval Step
+      uses: ./.github/actions/manual-approval
+      with:
+        greeting: "Hello, please approve to proceed!"
   greet2:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
