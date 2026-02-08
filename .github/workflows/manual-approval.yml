@@ -6,6 +6,10 @@ on:
       greeting:
         description: 'Greeting message'
         required: true
+      requireApproval:
+        description: 'Require manual approval?'
+        required: true
+        default: 'true'
 
 jobs:
   greetings:
@@ -19,6 +23,7 @@ jobs:
     needs: greetings
     environment:
       name: dev
+    if: ${{ inputs.requireApproval == 'true' }}
     steps:
     - name: Wait for manual approval
       run: echo "Waiting for manual approval via GitHub Environments..."
