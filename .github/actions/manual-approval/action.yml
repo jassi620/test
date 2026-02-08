@@ -1,0 +1,21 @@
+name: 'Manual Approval (Native via Environment)'
+description: 'Greets user, waits for approval via GitHub Environments, then greets again.'
+author: 'Your Name'
+
+inputs:
+  greeting:
+    description: 'Greeting message'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Greet user
+      run: echo "${{ inputs.greeting }}"
+      shell: bash
+    - name: Wait for approval
+      run: echo "Waiting for manual approval via GitHub Environments..."
+      shell: bash
+    - name: Greet again
+      run: echo "Approval complete! Hello again, ${{ inputs.greeting }}"
+      shell: bash
