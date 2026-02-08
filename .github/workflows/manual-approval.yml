@@ -11,6 +11,8 @@ jobs:
       name: dev
       # url: https://github.com/jassi620/test/environments/dev
     steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
     - name: Manual Approval Step
       uses: ./.github/actions/manual-approval
       with:
